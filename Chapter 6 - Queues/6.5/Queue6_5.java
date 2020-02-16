@@ -1,7 +1,6 @@
 package queue6_5;
 
 import java.util.Queue;
-import java.util.Deque;
 import java.util.ArrayDeque;
 
 public class Queue6_5 {
@@ -18,9 +17,7 @@ public class Queue6_5 {
 	 * Queue is left in its original state
 	 */
 	public static <E> E secondElement(Queue<E> queue) {
-		E element = null;
-		Deque<String> deque = new ArrayDeque<>();
-		
+		E element = null;		
 		for(int i = 0; i < queue.size(); i++) {
 			if(i == 1) {
 				element = (E)queue.element();
