@@ -17,19 +17,17 @@ public class SumOfPowers {
 		base = input.nextInt();
 		System.out.print("Enter a value for n: ");
 		n = input.nextInt();
-		result = solution(base, n, result);
+		result = solution(base, n);
 		System.out.println("The sum of the first " + n + " powers of base " + base + " is: " + result);
 		input.close();
 	}
 	
-	public static int solution(int base, int n, int result) {
+	public static int solution(int base, int n) {
 		// BASE CONDITION -- STOPPING CONDITION
 		if(n == 0) {
-			result += 1;
-			return result;
+			return 1;
 		}
-		result += (int) Math.pow(base, n);
-		return solution(base, n - 1, result);
+		return (int) Math.pow(base, n) + solution(base, n - 1);
 		
 	}
 
