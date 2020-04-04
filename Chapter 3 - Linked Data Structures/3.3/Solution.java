@@ -4,7 +4,8 @@ package sum;
 
 public class Solution {
 	public static void main(String[] args) {
-		Node list = new Node(25);
+		LinkedList list = new LinkedList();
+		list.add(25);
 		list.add(45);
 		list.add(65);
 		list.add(85);
@@ -12,10 +13,11 @@ public class Solution {
 	}
 	
 	// sum: Returns the sum of integers in the specified list
-	public static int sum(Node list) {
+	public static int sum(LinkedList list) {
 		int sum = 0;
+		Node current = list.head;
 		
-		for(Node p = list.head; p != null; p = p.next) {
+		for(Node p = current; p != null; p = p.next) {
 			sum += p.data;
 		}
 		
@@ -25,25 +27,36 @@ public class Solution {
 
 }
 
+// Node class
 class Node {
 	int data;
 	Node next;
-	Node p;					// pointer
-	Node head;				// head of list
+	
 	
 	Node(int data) {
 		this.data = data;
 	}
 	
+}
+
+// Wrapper class
+class LinkedList {
+	Node head;				// beginning of list
+	Node tail;				// end of list
+	
+	LinkedList() {
+		
+	}
+	
 	void add(int data) {
-		if(head == null) {
-			Node node = new Node(data);
-			head = node;
-			p = node;
+		Node node = new Node(data);
+		if(tail == null) {
+			head = tail = node;
 		} else {
-			p.next = new Node(data);
-			p = p.next;
+			tail.next = node;
+			tail = tail.next;
 		}
+			
 	}
 	
 }
