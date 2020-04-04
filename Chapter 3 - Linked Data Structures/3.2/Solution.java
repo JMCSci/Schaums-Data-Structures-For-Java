@@ -21,30 +21,36 @@ public class Solution {
 
 class Node {
 	int data;
-	int size = 0;
-	Node next;		// next node
-	Node p;			// pointer
+	int size;
+	Node next;			// next node
+	Node head;			// pointer
 	
 	
 	Node (int data) {
 		this.data = data;
-		size++;
+		size = 1;
 	}
 	
 	void insert(int data) {
-		if(next == null) {
+		if(head == null) {
 			Node node = new Node(data);
-			next = node;
-			p = next;
+			head = node;
 			size++;
 		} else {
-			// Find last node 
-			// Insert node after that node
-			p.next = new Node(data);
-			p = p.next;
-			// Increase the size of the list
-			size++;
+			Node p = head;
+			while(p != null) {
+				if(p.next == null) {
+					p.next = new Node(data);
+					size++;
+					break;
+				}
+				p = p.next;
+
+			}
+			
+			
 		}
+		
 	}
 		
 	int size() {
