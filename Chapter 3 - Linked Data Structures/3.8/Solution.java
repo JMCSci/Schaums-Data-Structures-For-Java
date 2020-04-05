@@ -14,7 +14,7 @@ public class Solution {
 		list2.insert(66);
 		list2.insert(77);
 		list2.insert(88);
-		list2.insert(69);
+		list2.insert(99);
 		System.out.println("### LIST 1 ###");
 		list1.traverse();
 		System.out.println("\n### LIST 2 ###");
