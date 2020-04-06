@@ -13,7 +13,7 @@ public class Solution {
 		list.insert(77);
 		list.insert(88);
 		list.insert(99);
-		list.put(list, 7, 50);
+		list.put(list, 3, 50);
 		list.traverse();
 	}
 
